@@ -5,13 +5,12 @@
   width: 100%;
   height: 12vh;
   background: linear-gradient(180deg, #fbf7e6, #ebe4d5 60%);
-
-  
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-menu {
@@ -54,9 +53,8 @@
   display: flex;
   align-items: center;
   gap: 45px;
-
 }
-.nav-login-cart img{
+.nav-login-cart img {
   width: 30px;
 }
 .nav-login-cart button {

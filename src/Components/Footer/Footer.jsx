@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import footer_logo from "../Assets/logo_big.png";
+import newLogo2 from "../Assets/newLogo2.png";
 import instagram_icon from "../Assets/instagram_icon.png";
 import pintester_icon from "../Assets/pintester_icon.png";
 import whatsapp_icon from "../Assets/whatsapp_icon.png";
@@ -10,7 +10,9 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-logo">
-        <img src={footer_logo} alt="Footer Logo" />
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <img src={newLogo2} alt="Shop logo" width={"250px"} />
+        </Link>
       </div>
 
       {/* Footer Navigation Links */}
