@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import footer_logo from "../Assets/logo_big.png";
-import NEWLOGO1 from "../Assets/NewLogo1.png";
+import newLogo2 from "../Assets/newLogo2.png";
 import instagram_icon from "../Assets/instagram_icon.png";
 import pintester_icon from "../Assets/pintester_icon.png";
 import whatsapp_icon from "../Assets/whatsapp_icon.png";
@@ -9,7 +8,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-logo">
-        <img src={NEWLOGO1} alt="" width={"200px"} />
+        <img src={newLogo2} alt="" width={"300px"} />
       </div>
       <ul className="footer-links">
         <li>
