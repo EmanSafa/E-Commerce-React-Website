@@ -1,7 +1,8 @@
 import React from "react";
+import './'
 const ShopCategory = () => {
     return(
-        <div>
+        <div className="shop-category">
 
         </div>
     )
