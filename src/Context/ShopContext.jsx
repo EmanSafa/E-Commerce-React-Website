@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*import React, { createContext } from "react";
 
 import React, { createContext, useState } from 'react';
@@ -54,12 +55,22 @@ const ShopContextProvider = (props) =>{
 
     const contextValue ={ getTotalCartItems ,getTotalCartAmount ,all_products,cartItems,addToCart,removeFromCart};
 
+=======
+import React, { createContext } from "react";
+import all_products from '../Components/Assets/all_product'
+
+export const ShopContext = createContext(null);
+
+const ShopContextProvider = (props) =>{
+    const contextValue ={all_products}
+>>>>>>> origin/main
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}
         </ShopContext.Provider>
     )
 }
+<<<<<<< HEAD
 export default ShopContextProvider;*/
 import React, { createContext, useState } from 'react';
 import all_products from '../Components/Assets/all_product';
@@ -124,4 +135,6 @@ export const ShopContextProvider = (props) => {
   );
 };
 
+=======
+>>>>>>> origin/main
 export default ShopContextProvider;

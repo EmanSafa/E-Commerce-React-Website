@@ -25,5 +25,9 @@ const NewCollections = () => {
   );
 };
 
+<<<<<<< HEAD
 
 export default NewCollections;
+=======
+export default NewCollections;
+>>>>>>> origin/main

@@ -27,7 +27,10 @@
 }
 .popular-item img{
   width: 300px;
+<<<<<<< HEAD
   transition: 0.6s;
+=======
+>>>>>>> origin/main
 }
 .popular-item img:hover {
   transform: scale(1.05);

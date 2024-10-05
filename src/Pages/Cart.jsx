@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import CartItems from '../Components/CartItems/CartItems';
 
  const Cart = () => {
@@ -7,6 +8,12 @@ import CartItems from '../Components/CartItems/CartItems';
 
       <CartItems/>
     </div>
+=======
+
+ const Cart = () => {
+  return (
+    <div>Cart</div>
+>>>>>>> origin/main
   )
 }
 export default Cart
