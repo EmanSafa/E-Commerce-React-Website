@@ -7,7 +7,7 @@ width: 82%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 170px;
+    margin: 20px 150px;
 }
 .shopcategory-indexSort p span{
     font-weight: 600;
@@ -16,9 +16,23 @@ width: 82%;
     padding: 10px 20px;
     border-radius: 40px;
     border: 1px solid #0d3b5b ;
+    cursor: pointer;
+}
+.sort-options li{
+    list-style: none;
+    border-bottom: 1px solid #0d3b5b;
+    padding: 3px;
+    color: #a2774a;
+}
+.sort-options li:hover{
+    color: #0d3b5b;
+}
+.shopcategory-sort:hover{
+
+color: #a2774a;
 }
 .shopcategory-products{
-    margin: 20px 170px;
+    margin: 20px 20px 20px 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 80px;
@@ -39,6 +53,7 @@ width: 82%;
     font-weight: 500;
 }
 .shopcategory-loadmore:hover{
-    background-color: #a2774a;
+    background-color: transparent;
+    border: 1px solid #a2774a;
     color: #0d3b5b;
 }

@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav-logo">
-        <img src={NewLogo1} alt="Shop logo" width={"200px"} />
+       
       </div>
       <div className="nav-login-cart">
         <Link to="/login">

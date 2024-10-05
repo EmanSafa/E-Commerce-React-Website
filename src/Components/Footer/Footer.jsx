@@ -1,46 +1,59 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import footer_logo from "../Assets/logo_big.png";
-import NEWLOGO1 from "../Assets/NewLogo1.png";
 import instagram_icon from "../Assets/instagram_icon.png";
 import pintester_icon from "../Assets/pintester_icon.png";
 import whatsapp_icon from "../Assets/whatsapp_icon.png";
+
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-logo">
-        <img src={NEWLOGO1} alt="" width={"200px"} />
+        <img src={footer_logo} alt="Footer Logo" />
       </div>
+
+      {/* Footer Navigation Links */}
       <ul className="footer-links">
         <li>
-          <a href="">Comany</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="">Products</a>
+          <Link to="/mens">Men's</Link>
         </li>
         <li>
-          <a href="">About</a>
+          <Link to="/womens">Women's</Link>
         </li>
         <li>
-          <a href="">Contact</a>
+          <Link to="/kids">Kids</Link>
+        </li>
+        <li>
+          <Link to="/contact-us">Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/about-us">About Us</Link>
         </li>
       </ul>
+
+      {/* Social Media Icons */}
       <div className="footer-social-icon">
-        <div className="footer-icon-containier">
-          <a href="https:instgram.com">
-            <img src={instagram_icon} alt="" />
+        <div className="footer-icon-container">
+          <a href="https://instagram.com">
+            <img src={instagram_icon} alt="Instagram" />
           </a>
-          <a href="https:pintrest.com">
-            <img src={pintester_icon} alt="" />
+          <a href="https://pinterest.com">
+            <img src={pintester_icon} alt="Pinterest" />
           </a>
-          <a href="https:whatsapp.com">
-            <img src={whatsapp_icon} alt="" />
+          <a href="https://whatsapp.com">
+            <img src={whatsapp_icon} alt="WhatsApp" />
           </a>
         </div>
       </div>
+
+      {/* Copyright Section */}
       <div className="footer-copyright">
         <hr />
-        <p>Copyright @ 2024 - All Right Reserved</p>
+        <p>Copyright © 2024 - All Rights Reserved</p>
       </div>
     </div>
   );

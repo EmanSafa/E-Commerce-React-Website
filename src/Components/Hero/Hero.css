@@ -13,16 +13,18 @@
   line-height: 1.1;
   margin-bottom: 10%;
 }
+
 .hero-left h2 {
   color: #5b3f0c;
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 10px;
   margin-bottom: 5%;
+  margin-top: 40px;
 }
 .hero-left p {
   color: #0d3b5b;
-  font-size: 100px;
+  font-size: 75px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -33,11 +35,12 @@
 }
 .hero-hand-icon img {
   width: 105px;
+  width: 70px;
   transition: all 0.3s ease-in;
 }
 .hero-hand-icon img:hover {
   width: 105px;
-  transform: rotate(-20deg);
+  transform: rotate(-5deg);
 }
 
 .hero-latest-btn {
@@ -45,8 +48,8 @@
   justify-self: center;
   align-items: center;
   gap: 15px;
-  width: 310px;
-  height: 70px;
+  width: 250px;
+  height: 60px;
   border-radius: 75px;
   margin-top: 30px;
   background-color: #083556;
@@ -55,6 +58,7 @@
   font-weight: 700;
   padding-left: 30px;
   transition: ease-in all 0.3s;
+  cursor: pointer;
 }
 .hero-latest-btn:hover {
   background: transparent;
@@ -76,4 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.hero-right img{
+  width: 500px;
 }

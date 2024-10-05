@@ -1,13 +1,13 @@
 .NewsLetter {
   width: 65%;
-  height: 40vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-self: center;
   margin: auto;
   padding: 0px 140px;
-  margin-bottom: 150px;
+  margin-bottom: 20px;
   background: linear-gradient(to left, #ffffff, #cfdeec 60%);
   gap: 30px;
 }
@@ -21,6 +21,7 @@
   color: #083556;
   font-size: 20px;
   letter-spacing: 4px;
+  
 }
 .NewsLetter div {
   display: flex;
@@ -31,9 +32,11 @@
   height: 70px;
   border-radius: 80px;
   border: 1px solid #4e4110;
+
 }
 .NewsLetter input {
-  width: 500px;
+  width: 400px;
+  height: 50px;
   margin-left: 30px;
   border: none;
   outline: none;
@@ -51,6 +54,7 @@
   cursor: pointer;
   border: none;
   transition: ease-in all 0.2s;
+  margin-bottom: 10px;
 }
 .NewsLetter div button:hover {
   background: transparent;
