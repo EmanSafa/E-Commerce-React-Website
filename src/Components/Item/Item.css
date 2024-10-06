@@ -1,9 +1,6 @@
 .item {
   width: 350px;
-<<<<<<< HEAD
   transition: 0.3s;
-=======
->>>>>>> origin/main
 }
 .item p {
   margin: 6px 0px;
@@ -27,9 +24,6 @@
   transform: scale(1.05);
   transition: 0.6s;
 }
-<<<<<<< HEAD
-.item img:hover{
+.item img:hover {
   transform: scale(1.05);
 }
-=======
->>>>>>> origin/main

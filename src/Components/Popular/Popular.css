@@ -25,12 +25,9 @@
   transition: ease-in all 0.5s;
   margin-left: 40px;
 }
-.popular-item img{
+.popular-item img {
   width: 300px;
-<<<<<<< HEAD
   transition: 0.6s;
-=======
->>>>>>> origin/main
 }
 .popular-item img:hover {
   transform: scale(1.05);

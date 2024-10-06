@@ -1,10 +1,6 @@
 * {
   margin: 0;
   font-family: "Poppins";
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
 }
 body {
   margin: 0;
@@ -16,10 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-<<<<<<< HEAD
-a{
+
+a {
   text-decoration: none;
   color: #3d3d3d;
 }
-=======
->>>>>>> origin/main
