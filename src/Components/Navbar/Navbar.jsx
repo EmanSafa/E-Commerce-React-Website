@@ -4,10 +4,10 @@ import newLogo2 from "../Assets/newLogo2.png";
 import cart_icon from "../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
-import Dashboard from "../../Dashboard/AppClass";
+
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const { getTotalCartItems } = useContext(ShopContext);
+  const { getTotalCartItems } = useContext(ShopContext); // Make sure this is correctly imported
 
   return (
     <div className="navbar">
@@ -55,8 +55,7 @@ const Navbar = () => {
         <Link to="/cart">
           <img src={cart_icon} alt="Cart" />
         </Link>
-        <div className="nav-cart-count">{getTotalCartItems?.() || 0}</div>{" "}
-        {/* Optional chaining */}
+        <div className="nav-cart-count">{getTotalCartItems() || 0}</div>
       </div>
     </div>
   );
