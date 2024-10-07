@@ -34,6 +34,9 @@
   row-gap: 40px;
   max-width: 1300px;
 }
+.collections a {
+  text-decoration: none;
+}
 .collections p {
   font-size: 15px;
 }

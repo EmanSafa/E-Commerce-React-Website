@@ -29,6 +29,9 @@
   width: 300px;
   transition: 0.6s;
 }
+.popular-item a {
+  text-decoration: none;
+}
 .popular-item img:hover {
   transform: scale(1.05);
 }
