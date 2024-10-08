@@ -14,6 +14,7 @@ import women_banner from "./Components/Assets/banner_women.png";
 import kid_banner from "./Components/Assets/banner_kids.png";
 import ShopContextProvider from "./Context/ShopContext"; // Import your context provider
 import Dashboard from "./Dashboard/AppClass";
+import Checkout from "./CheckOut/CheckOut";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </ShopContextProvider>
