@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+/*import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import newLogo2 from "../Assets/newLogo2.png";
 import cart_icon from "../Assets/cart_icon.png";
@@ -42,6 +42,76 @@ const Navbar = () => {
           </Link>
           {menu === "Dashboard" && <hr />}
         </li>
+      </ul>
+      <div className="nav-logo">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <img src={newLogo2} alt="Shop logo" width={"150px"} />
+        </Link>
+      </div>
+      <div className="nav-login-cart">
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+        <Link to="/cart">
+          <img src={cart_icon} alt="Cart" />
+        </Link>
+        <div className="nav-cart-count">{getTotalCartItems() || 0}</div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
+*/
+
+import React, { useContext, useState } from "react";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext"; // Import UserContext
+import newLogo2 from "../Assets/newLogo2.png"; // Ensure the logo is imported
+import cart_icon from "../Assets/cart_icon.png"; // Ensure the cart icon is imported
+import { ShopContext } from "../../Context/ShopContext"; // Import ShopContext if necessary
+
+const Navbar = () => {
+  const [menu, setMenu] = useState("shop");
+  const { user } = useContext(UserContext); // Access the user context
+  const { getTotalCartItems } = useContext(ShopContext); // Get cart items count
+
+  return (
+    <div className="navbar">
+      <ul className="nav-menu">
+        <li onClick={() => setMenu("shop")}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            Shop
+          </Link>
+          {menu === "shop" && <hr />}
+        </li>
+        <li onClick={() => setMenu("mens")}>
+          <Link to="/mens" style={{ textDecoration: "none" }}>
+            Men
+          </Link>
+          {menu === "mens" && <hr />}
+        </li>
+        <li onClick={() => setMenu("womens")}>
+          <Link to="/womens" style={{ textDecoration: "none" }}>
+            Women
+          </Link>
+          {menu === "womens" && <hr />}
+        </li>
+        <li onClick={() => setMenu("kids")}>
+          <Link to="/kids" style={{ textDecoration: "none" }}>
+            Kids
+          </Link>
+          {menu === "kids" && <hr />}
+        </li>
+        {user && user.role === 'admin' && ( // Render Dashboard only for admin
+          <li onClick={() => setMenu("dashboard")}>
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
+              Dashboard
+            </Link>
+            {menu === "dashboard" && <hr />}
+          </li>
+        )}
       </ul>
       <div className="nav-logo">
         <Link to="/" style={{ textDecoration: "none" }}>
