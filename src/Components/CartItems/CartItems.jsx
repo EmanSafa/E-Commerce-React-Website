@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 /*import React, { useContext } from "react";
+=======
+import React, { useContext, useState } from "react";
+>>>>>>> e36ac12d94ba8b9e08d89ed214d4c93ced0a3ef4
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
+import { Link } from "react-router-dom";
 
 const CartItems = () => {
   const { getTotalCartAmount, all_products, cartItems, removeFromCart } =
@@ -95,7 +100,9 @@ const CartItems = () => {
               <h3>${getTotalCartAmount().toFixed(2)}</h3>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <Link to="/checkout" style={{ textDecoration: "none" }}>
+            <button className="proceed-button">PROCEED TO CHECKOUT</button>
+          </Link>
         </div>
         <div className="cartitems-promocode">
           <p>Enter your Promocode If You Have</p>
