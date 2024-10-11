@@ -34,7 +34,6 @@
   gap: 20px;
 }
 .hero-hand-icon img {
-  width: 105px;
   width: 70px;
   transition: all 0.3s ease-in;
 }
@@ -72,7 +71,7 @@
 }
 
 .hero-latest-btn img:hover {
-  transform: translateX(90%);
+  transform: translateX(80%);
 }
 
 .hero-right {
@@ -81,6 +80,59 @@
   align-items: center;
   justify-content: center;
 }
-.hero-right img{
+.hero-right img {
   width: 500px;
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-left {
+    padding-left: 20px; /* Reduced padding */
+    padding-right: 20px; /* Added padding for right */
+    text-align: center; /* Center text for mobile */
+    margin-bottom: 20px; /* Adjust margin */
+  }
+
+  .hero-left h2 {
+    font-size: 16px; /* Smaller font size for headings */
+    letter-spacing: 5px; /* Reduced letter spacing */
+  }
+
+  .hero-left p {
+    font-size: 40px; /* Smaller font size for paragraphs */
+  }
+
+  .hero-hand-icon {
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center icons */
+  }
+
+  .hero-hand-icon img {
+    width: 50px; /* Smaller icon size */
+  }
+
+  .hero-right img {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit max width */
+  }
+
+  .hero-latest-btn {
+    width: 40%;
+    font-size: 10px; /* Smaller font size */
+    padding-left: 20px;
+    height: 30px;
+    display: flex;
+    margin-left: 30%;
+  }
+  .hero-latest-btn img {
+    width: 25px;
+    padding-right: 10px;
+  }
+  .hero-hand-icon img {
+    width: 40px;
+    margin-top: -6%;
+  }
 }

@@ -34,9 +34,30 @@
   row-gap: 40px;
   max-width: 1300px;
 }
-cd .collections a {
+.collections a {
   text-decoration: none;
 }
 .collections p {
   font-size: 15px;
+}
+@media only screen and (max-width: 600px) {
+  .newCollections h1 {
+    font-size: 30px;
+    margin-top: 10%;
+    background-color: #dbc8a6;
+    font-weight: bold;
+  }
+  .collections {
+    display: flex;
+    flex-direction: column;
+    width: 64%;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4%;
+    font-size: 20px;
+  }
+  .collections p {
+    font-size: 20px;
+    text-align: center;
+  }
 }

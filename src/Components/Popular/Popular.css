@@ -35,3 +35,21 @@
 .popular-item img:hover {
   transform: scale(1.05);
 }
+@media only screen and (max-width: 600px) {
+  .Popular h1 {
+    font-size: 30px;
+    margin-top: 10%;
+    background-color: #dbc8a6;
+    font-weight: bold;
+  }
+  .popular-item {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-right: 45%;
+  }
+  .popular-item img {
+    width: 246px;
+    transition: 0.6s;
+  }
+}

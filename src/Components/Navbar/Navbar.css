@@ -1,84 +1,76 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between; /* Use space-between for proper alignment */
   width: 100%;
   height: 16vh;
   background: linear-gradient(180deg, #fbf7e6, #ebe4d5 30%);
 }
-
-.nav-logo {
+.navbar .navbar-expand-lg .navbar-light .container-fluid .navbar-brand {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.nav-menu {
-  display: flex;
   align-items: center;
-  list-style: none;
-  gap: 50px;
-  color: #0d3b5b;
-  font-size: 20px;
-
-  font-weight: 500;
 }
-
-.nav-menu li {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 3px;
-
-  cursor: pointer;
-}
-.nav-menu a {
-  text-decoration: none;
-  color: #0d3b5b;
-}
-.nav-menu hr {
-  border: none;
-  width: 80%;
-  height: 3px;
-  border-radius: 10px;
-  background: #956430;
-}
-
 .nav-login-cart {
   display: flex;
   align-items: center;
   gap: 45px;
 }
-.nav-login-cart img {
-  width: 30px;
+/* Basic styles for the nav link */
+.navbar-nav .nav-item .nav-link {
+  color: #0d3b5b;
+  font-size: 20px;
+  margin-inline: 40px;
+  position: relative;
+  transition: transform 0.25s ease-out;
 }
-.nav-login-cart button {
+
+/* The underline before element */
+.navbar-nav .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #956430;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+/* Hover effect to show the underline */
+.nav-item .nav-link:hover::before {
+  transform: scaleX(1); /* Shows underline on hover */
+}
+
+/* Animation when link is tapped or clicked */
+.nav-item .nav-link:active,
+.nav-item .nav-link:focus {
+  transform: translateY(-10px); /* Moves text upwards on click/tap */
+  transition: transform 0.25s ease-out; /* Smooth transition */
+}
+
+/* Keep the underline visible when tapped or focused */
+.nav-item .nav-link:active::before,
+.nav-item .nav-link:focus::before {
+  transform: scaleX(1); /* Keeps the underline visible */
+}
+
+.nav-login-cart .nav-login-button {
   width: 100px;
-
   height: 40px;
-
-  outline: none;
-
-  border: 2px solid #956430;
-
-  border-radius: 75px;
-
-  color: #c4b493;
-
   font-size: 18px;
+  outline: none;
+  border: 2px solid #956430;
+  border-radius: 75px;
+  color: #c4b493;
   font-weight: 500;
-  padding-bottom: 40px;
   background: #0d3b5b;
   transition: all 0.5s;
   cursor: pointer;
 }
 
-.nav-login-cart button:hover {
+.nav-login-button:hover {
   background: transparent;
   color: #0d3b5b;
   border: 2px solid #0d3b5b;
@@ -86,26 +78,57 @@
   transform: scale(0.9);
 }
 
+.nav-cart-icon {
+  position: relative; /* For positioning cart count */
+}
+
 .nav-cart-count {
   width: 18px;
-
   height: 18px;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-  margin-top: -35px;
-
-  margin-left: -55px;
-
+  position: absolute; /* Positioning on top of the cart icon */
+  top: -10px; /* Adjust as needed */
+  right: -10px; /* Adjust as needed */
   border-radius: 11px;
-
   font-size: 14px;
-
   background: #0d3b5b;
-
   color: #c4b493;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-extras {
+    display: flex; /* Show in mobile view */
+    justify-content: end;
+  }
+
+  .nav-login-cart .nav-login-button {
+    margin-right: 10px;
+    width: 50px;
+    height: 25px;
+    font-size: 9px;
+    text-align: center;
+  }
+  .nav-login-cart .nav-cart-icon img {
+    width: 30px;
+    margin-right: 20px;
+    margin-top: 10%;
+  }
+  .nav-login-cart .nav-cart-icon .nav-cart-count {
+    right: 10px;
+    top: 2%;
+  }
+  .navbar-collapse .navbar-nav {
+    background-color: #c4b493;
+    border-radius: 30px;
+    text-align: center;
+    transition: transform 0.25s ease-out;
+    padding-top: 5px;
+  }
+  .navbar-nav .nav-item .nav-link::before {
+    width: 30%;
+    transform-origin: center;
+    margin-left: 35%;
+  }
 }
