@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
@@ -7,57 +7,51 @@ import remove_icon from "../Assets/cart_cross_icon.png";
 const CartItems = () => {
   const { getTotalCartAmount, all_products, cartItems, removeFromCart } =
     useContext(ShopContext);
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
 
-  console.log("All Products: ", all_products);
-  console.log("Cart Items: ", cartItems);
-
-  // Ensure all_products is valid
   if (!Array.isArray(all_products) || all_products.length === 0) {
     return <p>Error loading products.</p>;
   }
 
-  // Ensure cartItems is an object
   if (!cartItems || typeof cartItems !== "object") {
     return <p>Error loading cart items.</p>;
   }
 
-  // Render only products that are in the cart
   const cartItemElements = Object.keys(cartItems).map((id) => {
-    const product = all_products.find((prod) => prod.id === parseInt(id)); // Ensure ID types match
+    const product = all_products.find((prod) => prod.id === parseInt(id));
 
     if (product) {
       return (
-        <div key={product.id}>
-          <div className="cartitems-format cartitems-format-main">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="carticon-product-icon"
-            />
-            <p>{product.name}</p>
-            <p>${product.new_price.toFixed(2)}</p>
-            <button className="cartitems-quantity">
-              {cartItems[product.id]}
-            </button>
-            <p>${(product.new_price * cartItems[product.id]).toFixed(2)}</p>
-            <img
-              className="cartitems-remove-icon"
-              src={remove_icon}
-              onClick={() => removeFromCart(product.id)}
-              alt="Remove"
-            />
-          </div>
+        <div
+          key={product.id}
+          className="cartitems-format cartitems-format-main"
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            className="carticon-product-icon"
+          />
+          <p>{product.name}</p>
+          <p>${product.new_price.toFixed(2)}</p>
+          <button className="cartitems-quantity">
+            {cartItems[product.id]}
+          </button>
+          <p>${(product.new_price * cartItems[product.id]).toFixed(2)}</p>
+          <img
+            className="cartitems-remove-icon"
+            src={remove_icon}
+            onClick={() => removeFromCart(product.id)}
+            alt="Remove"
+          />
           <hr />
         </div>
       );
     } else {
       console.error(`Product not found for ID: ${id}`);
-      return null; // Return null if product is not found
+      return null;
     }
   });
 
-  // If no items are in the cart, display a message
   if (cartItemElements.length === 0) {
     return (
       <div className="cartitems">

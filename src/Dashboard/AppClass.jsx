@@ -1,4 +1,3 @@
-// Dashboard.jsx
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./AppClass.css";
@@ -72,46 +71,46 @@ function Dashboard() {
         <p>Loading products...</p>
       ) : (
         <>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex flex-wrap justify-content-center mb-3">
             <input
               type="text"
               placeholder="Item Id"
               value={Id}
               onChange={(e) => setId(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             />
             <input
               type="text"
               placeholder="Enter Name of Item"
               value={Name}
               onChange={(e) => setName(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             />
             <input
               type="number"
               placeholder="Enter Old Price"
               value={old_price}
               onChange={(e) => setOldPrice(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             />
             <input
               type="number"
               placeholder="Enter New Price"
               value={new_price}
               onChange={(e) => setNewPrice(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             />
             <input
               type="url"
               placeholder="Enter Image URL"
               value={Image}
               onChange={(e) => setImage(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             />
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="p-1"
+              className="p-1 m-1"
             >
               <option value="" disabled>
                 Select Category
@@ -122,7 +121,7 @@ function Dashboard() {
             </select>
             <Button
               onClick={handleInputValue}
-              className="custom-btn"
+              className="custom-btn m-1"
               disabled={
                 !Id || !Name || !Image || !old_price || !new_price || !category
               }
@@ -132,56 +131,54 @@ function Dashboard() {
           </div>
 
           <div className="mt-3">
-            <div className="container">
-              <div className="card-body">
-                <table className="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Item Image</th>
-                      <th>Old Price</th>
-                      <th>New Price</th>
-                      <th>Category</th>
-                      <th>Date</th>
-                      <th width="240px">Actions</th>
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Item Image</th>
+                    <th>Old Price</th>
+                    <th>New Price</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th width="240px">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {all_products.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.id}</td>
+                      <td>{item.name}</td>
+                      <td>
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          style={{ width: "100px", height: "100px" }}
+                        />
+                      </td>
+                      <td>{item.old_price}</td>
+                      <td>{item.new_price}</td>
+                      <td>{item.category}</td>
+                      <td>{item.date || "N/A"}</td>
+                      <td>
+                        <Button
+                          onClick={() => handleEdit(index)}
+                          className="me-2 custom-btn"
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          className="custom-btn"
+                          onClick={() => handleDelete(item.id)}
+                        >
+                          Delete
+                        </Button>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {all_products.map((item, index) => (
-                      <tr key={index}>
-                        <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td>
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            style={{ width: "100px", height: "100px" }}
-                          />
-                        </td>
-                        <td>{item.old_price}</td>
-                        <td>{item.new_price}</td>
-                        <td>{item.category}</td>
-                        <td>{item.date || "N/A"}</td>
-                        <td>
-                          <Button
-                            onClick={() => handleEdit(index)}
-                            className="me-2 custom-btn"
-                          >
-                            Edit
-                          </Button>
-                          <Button
-                            className="custom-btn"
-                            onClick={() => handleDelete(item.id)}
-                          >
-                            Delete
-                          </Button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </>
